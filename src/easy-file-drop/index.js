@@ -1,7 +1,6 @@
-import React, { useCallback, useRef, useState } from 'react'
-import { useEffect } from 'react/cjs/react.development'
+import { useEffect, useCallback, useRef, useState } from 'react'
 
-const useDrag = (onFiles) => {
+export const useFileDrop = (onFiles) => {
     const element = useRef(null)
     const prevListeners = useRef(null)
     const [dragging, setDragging]=useState(false)
@@ -76,7 +75,6 @@ const useDrag = (onFiles) => {
         prevListeners.current = { onDragOver, onDrop, onDragEnter, onDragLeave }
     }, [onDragOver, onDragEnter, onDragLeave, onDrop, cleanup])
     useEffect(() => {
-        console.log('ref', element.current)
         attachListners()
         return cleanup
     }, [element])
@@ -84,5 +82,3 @@ const useDrag = (onFiles) => {
         { element, dragging }
     )
 }
-
-export default useDrag

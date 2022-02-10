@@ -1,0 +1,29 @@
+{
+  "name": "easy-file-drop",
+  "version": "1.0.1",
+  "description": "Simplifies file drag and drop in react apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Badalmishra/onDrag.git"
+  },
+  "keywords": [
+    "drag",
+    "drop",
+    "file",
+    "upload",
+    "react-file-drop",
+    "easy-file-drop",
+    "use-file-drop",
+    "hook"
+  ],
+  "author": "Badal Mishra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Badalmishra/onDrag/issues"
+  },
+  "homepage": "https://github.com/Badalmishra/onDrag#readme"
+}

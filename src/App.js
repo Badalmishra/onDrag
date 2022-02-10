@@ -1,24 +1,22 @@
 import './App.css';
-import useDrag from './useDrag';
-import { useCallback, useMemo, useState } from 'react';
-import { loadFile } from './Helpers';
+import {useFileDrop} from './easy-file-drop';
+import { useCallback,  useState } from 'react';
+
 
 function App() {
-  const [urls, setUrls] = useState([])
+  const [files,setFiles] = useState([])
   const onFiles  = useCallback(async(files)=>{
-    const urls = []
-    for (let index = 0; index < files.length; index++) {
-      const file = files[index];
-      const url = await loadFile(file)
-      urls.push(url)
-    }
-    setUrls(urls)
-  })
-  const { element, dragging } = useDrag(onFiles)
+   /** Do somethinng with the files here */
+  setFiles(files)
+  }, [])
+
+  const { element, dragging } = useFileDrop(onFiles)
   return (
     <div className="App" ref={element}>
       <header className="App-header">
-        {urls.map(url=><img src={url} key={url} className="App-logo" alt="logo" />)}
+        <ul>
+          {files.map(file=><li key={file.name}>{file.name}</li>)}
+        </ul>
         {dragging?'Drop this file here':'Drag a file'}     
       </header>
     </div>
